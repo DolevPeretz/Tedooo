@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Project - Item Feed with Like and Comments
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project demonstrates how to display a feed of items using React. It involves fetching data (items) from a source, displaying them in a grid layout, and providing interactive elements such as "likes" and "comments."
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+The goal of this project is to fetch a list of items, display them in a visually appealing and responsive grid, and allow users to interact with the items by liking them. The grid layout is dynamic and adjusts based on the available items. It also includes the option to toggle likes and update the like count.
 
-### `npm start`
+### Steps Involved:
+1. **Fetching Items**
+   - The data for the items (including user name, shop name, post text, images, likes, and comments) is fetched using an API or mock data (based on implementation).
+   - The items are dynamically fetched, meaning that they are loaded as you scroll, ensuring smooth performance.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Displaying Items**
+   - The fetched items are displayed in a grid layout using React components. Each item is wrapped inside a card-like layout with the following information:
+     - **Avatar**: Image of the user.
+     - **User Name**: Name of the user who posted the item.
+     - **Shop Name**: Name of the shop where the item was posted.
+     - **Post Text**: Description or text associated with the item.
+     - **Images**: A set of images related to the item.
+     - **Likes & Comments**: Number of likes and comments on the post.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. **Grid Layout**
+   - Items are displayed in a grid with a responsive layout, ensuring they appear correctly on different screen sizes.
+   - The grid adjusts to display three items per row by default. If the last row has fewer than three items, they are aligned to the right.
 
-### `npm test`
+4. **Interactivity: Likes & Comments**
+   - Each item has a "like" button. Clicking the button toggles the like status for that item, updating the like count accordingly.
+   - The number of likes and comments is shown for each item.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. **Responsive Design**
+   - The layout is responsive and adjusts the grid based on the number of items and the available screen size.
+   - If there are fewer than three items in the last row, they will be aligned to the right with empty spaces on the left.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Fetching Data**: Items are fetched from an API or mock data and displayed dynamically.
+- **Grid Layout**: Items are displayed in a responsive grid layout with a maximum of three items per row.
+- **Like Button**: Each item has a like button that toggles the like state and updates the like count.
+- **Comment Count**: Displays the number of comments for each item.
+- **Sticky Header**: The page includes a sticky header for easy navigation.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **React**: The core JavaScript library used for building the user interface.
+- **CSS**: Custom CSS for styling the components and grid layout.
+- **TypeScript**: Used for handling dynamic functionality such as the like button and updating the data.
+- **HTML**: Used for structuring the page and displaying the content.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

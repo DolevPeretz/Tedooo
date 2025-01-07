@@ -16,7 +16,6 @@ body {
   box-shadow: 0 4px 2px -2px gray; 
 }
 .secondary-header {
- 
   padding: 20px; 
 }
 
@@ -26,18 +25,18 @@ body {
   gap: 24px;
   width: 80%; 
   margin: 0 auto; 
+  justify-content: flex-start;  /* ממקם את כל האובייקטים בצד ימין */
+  
 }
 
 .feed-row {
   display: flex;
   justify-content: space-between; 
   gap: 30px;
-}
+  justify-content: center; /* ממקם את כל האובייקטים במרכז השורה */
 
-.feed-row > .feed-item:nth-child(n+2) {
-  margin-left: auto; 
-}
 
+}
 .feed-item {
   
   margin-bottom: 24px; 
@@ -61,6 +60,17 @@ body {
   flex-grow: 1;
 
 }
+
+
+.feed-row > .feed-item {
+  flex: 1 1 30%; /* כל אובייקט יתפוס 30% מהשורה */
+  max-width: 30%;  /* לוודא שהאובייקטים לא יתפשטו יותר מ-30% */
+  box-sizing: border-box;
+}
+
+
+
+
 
 .feed-item .images-container {
   align-items: center;
