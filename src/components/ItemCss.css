@@ -33,6 +33,10 @@ body {
   justify-content: space-between; /* נוודא שכל 3 פריטים יהיו בשורה אחת */
   gap: 30px; /* רווח בין כל פריט */
 }
+/* כאן נוסיף סטייל נוסף כדי לוודא שהתמונות יצמדו לימין במידה ויש פחות מ-3 תמונות */
+.feed-row > .feed-item:nth-child(n+2) {
+  margin-left: auto; /* תמונות אחרי הראשונה יתמקמו מימין */
+}
 
 .feed-item {
   
@@ -49,7 +53,7 @@ body {
 
   width: 266px;
   min-width: 240px;
-  height: 450px;
+  height: 400px;
   background: hsl(0, 100%, 100%);
   border: 1px solid #d9d9d9;
   border: 5px solid rgb(255, 255, 255); 
@@ -61,27 +65,33 @@ body {
 }
 
 .feed-item .images-container {
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  max-height: 200px;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin-bottom: 8px;
   width: 100%;
-  justify-content: center;
-  overflow-y: scroll; /* מוודא שיש גלילה */
+  overflow: hidden; /* תחילה, נסגור את האפשרות לגלול */
+  height: auto;  /* גובה קבוע */
+  overflow-y: auto;  /* נוודא שיתאפשר גלילה אם יש יותר מתמונה אחת */
   scrollbar-width: thin; /* קטין את רוחב הסרגל */
-  scrollbar-color: #888 #f0f0f0; /* הגדרת צבע לסרגל הגלילה */
 
 }
+
 
 
 .feed-item img.post-image {
-  width: 80%; /* התמונה תתפוס 100% מרוחב ה-card */
-  height: auto; /* שמירה על פרופורציות התמונה */
+  justify-content: center;  /* למרכז את התמונות בשורה */
+  align-items: center;  /* למרכז את התמונה מבחינת הגובה */
+  object-fit: contain;  /* ישמור על פרופורציות התמונה מבלי לחתוך */
+
+  width: 100%;
+  height: 100%;
+  object-position: center;
   border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* הצללה סביב התמונה */
-  object-fit: AUTO; /* אם התמונה יותר גדולה, היא תתפשט באופן אחיד */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 
 

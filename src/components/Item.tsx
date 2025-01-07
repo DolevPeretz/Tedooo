@@ -19,6 +19,8 @@ interface ItemComponentProps {
 }
 
 const Item: React.FC<ItemComponentProps> = ({ item, toggleLike }) => {
+  const isMultipleImages = item.images.length > 1;  // בודק אם יש יותר מתמונה אחת
+  const containerClass = isMultipleImages ? 'images-container scrollable' : 'images-container';  // אם יש יותר מתמונה אחת, נוסיף את מחלקת הגלילה
   return (
     <div className="feed-item">
       <div className="feed-item-header">
