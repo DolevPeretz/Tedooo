@@ -1,24 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import Item from './Item';  // ייבוא רכיב Item
-import useFetchData from '../Hook/useFetchData';  // ייבוא ה-hook
-import './ItemCss.css';  // ייבוא ה-CSS
+import Item from './Item';  
+import useFetchData from '../Hook/useFetchData';  
+import '../CSS/ItemCss.css'; 
 
 const Feed: React.FC = () => {
-  const [feedData, hasMore, loading, fetchData] = useFetchData(); // שימוש ב-hook
+  const [feedData, hasMore, loading, fetchData] = useFetchData(); 
   
-  // פונקציה לחיתוך המערך לקבוצות של 3 פריטים
   const groupItems = (items: any[]) => {
     const groupedItems = [];
     for (let i = 0; i < items.length; i += 3) {
-      groupedItems.push(items.slice(i, i + 3)); // כל קבוצה תכיל 3 פריטים
+      groupedItems.push(items.slice(i, i + 3)); 
     }
     return groupedItems;
   };
 
-  const [items, setItems] = useState(feedData);  // נשמור את מצב הלייקים כאן
+  const [items, setItems] = useState(feedData);  
 
-  // עדכון מצב הלייק עבור כל אובייקט
   const toggleLike = (id: string) => {
     setItems(prevItems =>
       prevItems.map(item =>
@@ -30,13 +28,13 @@ const Feed: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log(feedData); // הדפסת המידע המתקבל
+    console.log(feedData); 
     if (feedData.length > 0) {
-      setItems(feedData); // אם יש נתונים, עדכון ה-state
+      setItems(feedData); 
     }
-  }, [feedData]);  // כשרשימת feedData מתעדכנת
+  }, [feedData]); 
 
-  const groupedData = groupItems(items);  // מחלקים את המידע לקבוצות של 3 אובייקטים
+  const groupedData = groupItems(items);  
 
   return (
     <div className="all-item">

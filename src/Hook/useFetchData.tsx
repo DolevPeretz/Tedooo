@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ItemProps } from '../components/Item'; // ייבוא טיפוס ItemProps
+import { ItemProps } from '../components/Item'; 
 
 const useFetchData = (): [ItemProps[], boolean, boolean, (skip: number) => void] => {
   const [feedData, setFeedData] = useState<ItemProps[]>([]);
@@ -11,22 +11,21 @@ const useFetchData = (): [ItemProps[], boolean, boolean, (skip: number) => void]
     const response = await fetch(`https://backend.tedooo.com/hw/feed.json?skip=${skip}`);
     const data = await response.json();
 
-    // גישה לשדה data במקום data.items
     if (Array.isArray(data.data)) {
-      setFeedData(prevData => [...prevData, ...data.data]);  // עדכון feedData
+      setFeedData(prevData => [...prevData, ...data.data]);  
     } else {
       console.error("Error: 'data' is not an array", data);
     }
 
     setLoading(false);
-    setHasMore(data.hasMore);  // עדכון hasMore
+    setHasMore(data.hasMore);  
   };
 
   useEffect(() => {
-    fetchData(0);  // טוען את הנתונים בהתחלה
+    fetchData(0);  
   }, []);
 
-  return [feedData, hasMore, loading, fetchData];  // החזרת הערכים
+  return [feedData, hasMore, loading, fetchData]; 
 };
 
 export default useFetchData;

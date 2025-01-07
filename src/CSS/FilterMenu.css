@@ -1,11 +1,11 @@
 .filter-menu {
     display: flex;
     align-items: center;
-    gap: 12px;  /* מרווח בין אלמנטים */
+    gap: 12px;  
     padding: 10px;
-    border: 1px solid #ddd;  /* גבול עבור התפריט */
+    border: 1px solid #ddd;  
     border-radius: 8px;
-    background-color: #f0f0f0;  /* צבע אפור בהיר */
+    background-color: #f0f0f0; 
 }
   
   .search-bar {

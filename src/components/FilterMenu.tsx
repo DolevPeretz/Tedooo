@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './FilterMenu.css';
+import '../CSS/FilterMenu.css';
 
 const FilterMenu: React.FC = () => {
   const [activeButton, setActiveButton] = useState<string>('New');

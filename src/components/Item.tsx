@@ -1,5 +1,5 @@
 import React from "react";
-import './ItemCss.css';
+import '../CSS/ItemCss.css';
 
 export interface ItemProps {
   id: string;
@@ -15,12 +15,10 @@ export interface ItemProps {
 
 interface ItemComponentProps {
   item: ItemProps;
-  toggleLike: (id: string) => void;  // פונקציה לשינוי מצב הלייק
+  toggleLike: (id: string) => void;  
 }
 
 const Item: React.FC<ItemComponentProps> = ({ item, toggleLike }) => {
-  const isMultipleImages = item.images.length > 1;  // בודק אם יש יותר מתמונה אחת
-  const containerClass = isMultipleImages ? 'images-container scrollable' : 'images-container';  // אם יש יותר מתמונה אחת, נוסיף את מחלקת הגלילה
   return (
     <div className="feed-item">
       <div className="feed-item-header">
@@ -31,13 +29,11 @@ const Item: React.FC<ItemComponentProps> = ({ item, toggleLike }) => {
             <div className="shop-name">{item.shopName}</div>
           </div>
         </div>
-        {/* כפתור הלייק בצד ימין */}
         <button onClick={() => toggleLike(item.id)}>{item.liked ? "Unlike" : "Like"}</button>
       </div>
 
       <p className="post-text">{item.postText}</p>
 
-      {/* אלמנט שיכיל את התמונות */}
       <div className="images-container">
         {item.images.slice(0, 5).map((img, index) => (
           <img key={index} className="post-image" src={img} alt={`post-image-${index}`} />
@@ -45,7 +41,7 @@ const Item: React.FC<ItemComponentProps> = ({ item, toggleLike }) => {
       </div>
 
       <div className="stats">
-        <span>{item.likes} Likes</span> {/* מציג את מספר הלייקים */}
+        <span>{item.likes} Likes</span> 
         <span>{item.comments} Comments</span>
       </div>
     </div>

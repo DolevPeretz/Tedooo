@@ -10,13 +10,10 @@ const App: React.FC = () => {
       <div className="App">
         <div className="new-component">
           <FilterMenu />
-          <div className="sticky-header">Product Catalog</div> {/* כותרת ראשית */}
-          
-          {/* כותרת נוספת */}
-          <div className="secondary-header"></div> {/* כותרת נוספת מתחת */}
-          
+          <div className="sticky-header">Product Catalog</div> 
+          <div className="secondary-header"></div> 
           <Routes>
-            <Route path="/" element={<Feed />} /> {/* עמוד הבית */}
+            <Route path="/" element={<Feed />} />
           </Routes>
         </div>
       </div>
